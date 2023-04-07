@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Paragraph Styling</title>
+    <style>
+        
+        #styled-paragraph {
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>EECS 348 Lab Seven Practice Two</h1>
+    <p id="styled-paragraph">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime dignissimos porro velit molestias animi. Iure ea dolor alias quisquam nulla deleniti ex perferendis hic veniam optio. Repellendus, nostrum? Officiis, blanditiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eaque saepe nulla! Fugiat nobis, corrupti doloribus delectus quidem reprehenderit beatae eum ab at quia debitis illo vel officiis, eius sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas deleniti sed possimus quae. Quisquam neque, natus magnam harum modi vitae itaque suscipit eius assumenda, ipsa quam obcaecati. Veniam, eius nihil!
+    </p>
+
+    <form id="styling-form">
+        <label for="text-color">Text Color:</label>
+        <input type="color" id="text-color" name="text-color"><br><br>
+
+        <label for="border-color">Border Color:</label>
+        <input type="color" id="border-color" name="border-color"><br><br>
+
+        <label for="border-width">Border Width (in pixels):</label>
+        <input type="number" id="border-width" name="border-width" min="0"><br><br>
+
+        <button type="button" onclick="applyStyles()">Apply Styles</button>
+    </form>
+
+    <script>
+        function applyStyles() {
+            const textColor = document.getElementById("text-color").value;
+            const borderColor = document.getElementById("border-color").value;
+            const borderWidth = document.getElementById("border-width").value;
+            const paragraph = document.getElementById("styled-paragraph");
+
+            paragraph.style.color = textColor;
+            paragraph.style.borderColor = borderColor;
+            paragraph.style.borderWidth = borderWidth + "px";
+        }
+    </script>
+</body>
+</html>
